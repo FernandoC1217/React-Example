@@ -40,30 +40,33 @@ class Movies extends Component {
   }
 
   renderMovies() {
+    console.log(this.state.movies);
+
     const moviesList = this.state.movies.map((item, i) => {
+      console.log(`Item: ${i}`);
       return (
-        <MovieComponent>
+        <MovieComponent
           key={i}
-          title= {"titulo"}
-          image={item.image}
-          year={item.year}
-          duracion={item.duracion}
-          genero={item.genero}
+          title={item.titulo}
           sinopsis={item.sinopsis}
-        </MovieComponent>
+          duracion={item.duracion}
+          year={item.year}
+          genero={item.genero}
+        ></MovieComponent>
       );
     });
-    return moviesList
+    return moviesList;
   }
 
   render() {
     return (
       <div
-        className="mr-auto ml-auto col-10 row"
+        className="mr-auto ml-auto col-10"
         style={{ border: "1px dashed gray" }}
       >
-        {this.renderMovies()}  
-{/*
+        <p>rendermovies:</p>
+        {this.renderMovies()}
+
         <MovieComponent
           title={this.state.movieA.titulo}
           image={
@@ -76,7 +79,8 @@ class Movies extends Component {
           genero={this.state.movieA.genero}
           sinopsis={this.state.movieA.sinopsis}
         ></MovieComponent>
-        <MovieComponent
+
+        {/*<MovieComponent
           title={this.state.movieB.titulo}
           image={
             this.state.movieB.image

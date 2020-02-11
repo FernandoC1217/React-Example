@@ -15,9 +15,9 @@ class MovieComponent extends Component {
   };
   render() {
     return (
-      <div className="col-4" style={{ border: "1px dashed gray" }}>
-        <Card>
-          <h2>{this.props.title}</h2>
+        <Card
+        style={{border: '2px dashed red'}}>
+            <CardTitle>{this.props.title}</CardTitle>
           <CardImg
             top
             height='50%'    
@@ -48,7 +48,6 @@ class MovieComponent extends Component {
             <Button>See movie</Button>
           </CardBody>
         </Card>
-      </div>
     );
   }
 }
